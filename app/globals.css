@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/*
+  Design system — editorial, not brochure.
+  One accent (vermilion), warm paper background, near-black ink, a single
+  hairline rule color. Everything else is type and space.
+*/
+@theme {
+  --color-paper: #faf9f6;
+  --color-paper-deep: #f2efe8;
+  --color-ink: #16150f;
+  --color-ink-soft: #46443c;
+  --color-muted: #75726a;
+  --color-line: #e2ded4;
+  --color-line-strong: #cdc8bb;
+  --color-accent: #d9430f;
+  --color-accent-deep: #b03509;
+  --color-accent-wash: #fbeee8;
+  --color-placeholder: #d9d5cc;
+  --color-placeholder-ink: #85817a;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-display-serif), ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Editorial headline treatment: serif display, tight leading, no letter-spacing
+   theatrics. Applied via .display so it's opt-in per heading. */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+}
+
+/* Small all-caps label used for section eyebrows and field labels. */
+.eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Diagonal hatch for image placeholders — reads as "asset pending",
+   not as a broken image. */
+.placeholder-hatch {
+  background-color: var(--color-placeholder);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.55) 0px,
+    rgba(255, 255, 255, 0.55) 1px,
+    transparent 1px,
+    transparent 11px
+  );
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Native selects: strip the platform chrome, keep the affordance. */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%2346443c' stroke-width='1.5'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 0.7rem;
+  padding-right: 2.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
