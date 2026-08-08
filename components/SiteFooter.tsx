@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HashLink from "./HashLink";
 
 export default function SiteFooter() {
   return (
@@ -53,14 +54,14 @@ export default function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/#communities" className="hover:text-accent">
+                <HashLink href="/#communities" className="hover:text-accent">
                   Communities
-                </Link>
+                </HashLink>
               </li>
               <li>
-                <Link href="/#incentives" className="hover:text-accent">
+                <HashLink href="/#incentives" className="hover:text-accent">
                   Current incentives
-                </Link>
+                </HashLink>
               </li>
               <li>
                 <Link href="/quiz" className="hover:text-accent">

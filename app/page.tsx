@@ -10,6 +10,7 @@ import {
 } from "@/data/communities";
 import { daysUntil, formatDate } from "@/lib/filters";
 import CommunityExplorer from "@/components/CommunityExplorer";
+import HashLink from "@/components/HashLink";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 
 // Three sample incentives for the homepage strip — one of each headline kind.
@@ -55,12 +56,12 @@ export default function HomePage() {
                 →
               </span>
             </Link>
-            <Link
-              href="#communities"
+            <HashLink
+              href="/#communities"
               className="inline-flex items-center justify-center rounded-full border border-ink/20 px-7 py-4 text-base font-medium text-ink transition-colors hover:border-ink/50"
             >
               Browse communities
-            </Link>
+            </HashLink>
           </div>
 
           <dl className="mt-14 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-8 sm:grid-cols-4">

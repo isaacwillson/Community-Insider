@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HashLink from "./HashLink";
 
 export default function SiteHeader() {
   return (
@@ -19,18 +20,18 @@ export default function SiteHeader() {
           </Link>
 
           <nav className="flex items-center gap-1 sm:gap-2">
-            <Link
+            <HashLink
               href="/#communities"
               className="rounded-full px-2.5 py-2 text-sm text-ink-soft transition-colors hover:text-ink sm:px-3"
             >
               Communities
-            </Link>
-            <Link
+            </HashLink>
+            <HashLink
               href="/#incentives"
               className="hidden rounded-full px-3 py-2 text-sm text-ink-soft transition-colors hover:text-ink sm:block"
             >
               Incentives
-            </Link>
+            </HashLink>
             <Link
               href="/quiz"
               className="rounded-full bg-accent px-3.5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-deep sm:px-4"
