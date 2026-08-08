@@ -18,7 +18,7 @@ import CommunityCard from "./CommunityCard";
 const HOME_TYPE_OPTIONS: HomeType[] = ["single-family", "townhome", "condo", "55-plus"];
 
 const selectClass =
-  "w-full rounded-none border border-line-strong bg-white px-3.5 py-3 text-sm text-ink transition-colors hover:border-ink/40 focus:border-accent";
+  "w-full rounded-sm border border-line-strong bg-surface px-3.5 py-3 text-sm text-ink transition-colors hover:border-ink/40 focus:border-accent";
 
 /**
  * Filter bar + grid. Featured communities show by default; touching any filter
@@ -51,7 +51,7 @@ export default function CommunityExplorer({
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="eyebrow text-accent">Communities</p>
-          <h2 className="display mt-3 text-4xl sm:text-5xl">
+          <h2 className="display mt-3 text-[1.75rem] sm:text-[2.25rem]">
             {active ? "Search results" : "Worth your weekend"}
           </h2>
         </div>
@@ -63,7 +63,7 @@ export default function CommunityExplorer({
       </div>
 
       {/* Filter bar */}
-      <div className="mt-8 border border-line bg-white p-4 sm:p-5">
+      <div className="mt-8 border border-line bg-surface p-4 sm:p-5">
         <div className="grid gap-3 sm:grid-cols-3">
           <label className="block">
             <span className="eyebrow mb-2 block text-muted">County</span>
@@ -140,7 +140,7 @@ export default function CommunityExplorer({
           ))}
         </div>
       ) : (
-        <div className="mt-8 border border-dashed border-line-strong bg-white px-6 py-16 text-center">
+        <div className="mt-8 border border-dashed border-line-strong bg-surface px-6 py-16 text-center">
           <p className="display text-2xl">Nothing matches that combination.</p>
           <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-ink-soft">
             That doesn&apos;t mean it doesn&apos;t exist — it means it isn&apos;t
@@ -150,7 +150,7 @@ export default function CommunityExplorer({
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href="/quiz"
-              className="inline-flex items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-medium text-white hover:bg-accent-deep"
+              className="inline-flex items-center justify-center rounded-sm bg-accent px-5 py-3 text-sm font-medium text-white hover:bg-accent-deep"
             >
               Have me look for you
             </a>

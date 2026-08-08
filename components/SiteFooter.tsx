@@ -7,7 +7,7 @@ export default function SiteFooter() {
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="max-w-2xl">
           <p className="eyebrow text-accent">Next step</p>
-          <h2 className="display mt-4 text-4xl sm:text-5xl">
+          <h2 className="display mt-4 text-[1.75rem] sm:text-[2.25rem]">
             Tell me what you&apos;re looking for.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-ink-soft">
@@ -19,20 +19,20 @@ export default function SiteFooter() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/quiz"
-              className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-accent-deep"
+              className="inline-flex items-center justify-center rounded-sm bg-accent px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-accent-deep"
             >
               Take the Builder Match Quiz
             </Link>
             <a
               href="mailto:hello@example.com"
-              className="inline-flex items-center justify-center rounded-full border border-ink/20 px-6 py-3.5 text-sm font-medium text-ink transition-colors hover:border-ink/50"
+              className="inline-flex items-center justify-center rounded-sm border border-line-strong px-6 py-3.5 text-sm font-medium text-ink transition-colors hover:border-ink/45"
             >
               Email a question
             </a>
           </div>
         </div>
 
-        <div className="mt-16 grid gap-8 border-t border-line-strong/70 pt-10 sm:grid-cols-3">
+        <div className="mt-16 grid gap-8 border-t border-line-strong pt-10 sm:grid-cols-3">
           <div>
             <p className="eyebrow text-muted">Contact</p>
             <p className="mt-3 text-sm text-ink-soft">
@@ -72,7 +72,7 @@ export default function SiteFooter() {
           </div>
           <div>
             <p className="eyebrow text-muted">Note</p>
-            <p className="mt-3 text-sm leading-relaxed text-muted">
+            <p className="mt-3 text-sm leading-relaxed text-ink-soft">
               This is a design prototype. Names, communities, builders, pricing
               and incentives are invented. Nothing here is an offer, and no form
               on this site sends anything anywhere.

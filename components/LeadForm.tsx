@@ -4,7 +4,7 @@ import { FormEvent, useState } from "react";
 import { QuizAnswers } from "@/lib/filters";
 
 const inputClass =
-  "w-full rounded-none border border-line-strong bg-white px-4 py-3.5 text-base text-ink placeholder:text-muted/70 transition-colors hover:border-ink/40 focus:border-accent";
+  "w-full rounded-sm border border-line-strong bg-surface px-4 py-3.5 text-base text-ink placeholder:text-muted/70 transition-colors hover:border-ink/40 focus:border-accent";
 
 /**
  * Lead capture. This form intentionally does not submit anywhere — it logs to
@@ -62,15 +62,17 @@ export default function LeadForm({
 
   if (submitted) {
     return (
-      <div className="border border-accent/40 bg-accent-wash p-8 text-center sm:p-12">
-        <p className="display text-3xl sm:text-4xl">Got it{name ? `, ${name.split(" ")[0]}` : ""}.</p>
+      <div className="border border-accent/30 bg-accent-wash p-8 text-center sm:p-12">
+        <p className="display text-[1.75rem] sm:text-[2.25rem]">
+          Got it{name ? `, ${name.split(" ")[0]}` : ""}.
+        </p>
         <p className="mx-auto mt-4 max-w-md text-base leading-relaxed text-ink-soft">
           Your match report and this month&apos;s full incentive list are on the
           way to{" "}
           <span className="font-medium text-ink">{email || "your inbox"}</span>.
           I read every one of these myself — expect a reply, not an autoresponder.
         </p>
-        <p className="mx-auto mt-6 max-w-md border-t border-accent/25 pt-5 font-mono text-xs leading-relaxed text-muted">
+        <p className="mx-auto mt-6 max-w-md border-t border-accent/20 pt-5 font-mono text-xs leading-relaxed text-ink-soft">
           Prototype: nothing was actually sent. The submitted values were logged
           to the browser console.
         </p>
@@ -86,10 +88,10 @@ export default function LeadForm({
   }
 
   return (
-    <div className="border border-ink/15 bg-white p-6 sm:p-10">
+    <div className="border border-line-strong bg-surface p-6 sm:p-10">
       <div className="max-w-xl">
         <p className="eyebrow text-accent">One last thing</p>
-        <h2 className="display mt-4 text-3xl leading-tight sm:text-4xl">{heading}</h2>
+        <h2 className="display mt-4 text-[1.75rem] sm:text-[2.25rem]">{heading}</h2>
         <p className="mt-4 text-base leading-relaxed text-ink-soft">{blurb}</p>
       </div>
 
@@ -140,7 +142,7 @@ export default function LeadForm({
 
         <button
           type="submit"
-          className="mt-7 w-full rounded-full bg-accent px-8 py-4 text-base font-medium text-white transition-colors hover:bg-accent-deep sm:w-auto"
+          className="mt-7 w-full rounded-sm bg-accent px-8 py-4 text-base font-medium text-white transition-colors hover:bg-accent-deep sm:w-auto"
         >
           Send my match report
         </button>

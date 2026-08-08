@@ -77,7 +77,7 @@ export default function MobileNav() {
 
           <div
             id="mobile-nav-panel"
-            className="panel-in absolute left-0 right-0 top-full z-40 border-b border-line bg-paper shadow-[0_12px_24px_-16px_rgba(22,21,15,0.35)] sm:hidden"
+            className="panel-in absolute left-0 right-0 top-full z-40 border-b border-line-strong bg-surface sm:hidden"
           >
             <nav className="px-5 py-1">
               <MenuItem href="/#communities" label="Communities" hint="Browse and filter all 10" onNavigate={close} />
@@ -100,13 +100,13 @@ export default function MobileNav() {
             <div className="flex gap-2 border-t border-line bg-paper-deep px-5 py-4">
               <a
                 href="tel:+15550104477"
-                className="flex-1 rounded-full border border-ink/20 px-4 py-3 text-center text-sm font-medium text-ink"
+                className="flex-1 rounded-sm border border-line-strong px-4 py-3 text-center text-sm font-medium text-ink"
               >
                 Call
               </a>
               <a
                 href="mailto:hello@example.com"
-                className="flex-1 rounded-full border border-ink/20 px-4 py-3 text-center text-sm font-medium text-ink"
+                className="flex-1 rounded-sm border border-line-strong px-4 py-3 text-center text-sm font-medium text-ink"
               >
                 Email
               </a>

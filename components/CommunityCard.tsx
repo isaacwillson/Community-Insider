@@ -14,7 +14,7 @@ export default function CommunityCard({ community }: { community: Community }) {
   return (
     <Link
       href={`/communities/${community.slug}`}
-      className="group flex flex-col border border-line bg-white transition-colors hover:border-line-strong focus-visible:border-accent"
+      className="group flex flex-col border border-line bg-surface transition-colors hover:border-line-strong focus-visible:border-accent"
     >
       <div className="relative">
         <ImagePlaceholder
@@ -23,7 +23,7 @@ export default function CommunityCard({ community }: { community: Community }) {
           label={community.heroImageAlt}
           className="w-full"
         />
-        <span className="absolute left-3 top-3 bg-white/95 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-ink-soft">
+        <span className="absolute left-3 top-3 bg-surface/95 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-ink-soft">
           {STATUS_LABELS[community.status]}
         </span>
         {incentiveCount > 0 && (
@@ -37,7 +37,7 @@ export default function CommunityCard({ community }: { community: Community }) {
         <p className="text-[11px] uppercase tracking-[0.12em] text-muted">
           {community.builder}
         </p>
-        <h3 className="display mt-2 text-2xl leading-tight transition-colors group-hover:text-accent">
+        <h3 className="display mt-2 text-[1.375rem] transition-colors group-hover:text-accent">
           {community.name}
         </h3>
         <p className="mt-1.5 text-sm text-ink-soft">

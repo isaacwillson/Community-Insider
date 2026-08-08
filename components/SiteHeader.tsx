@@ -6,7 +6,7 @@ export default function SiteHeader() {
   return (
     <>
       {/* Prototype banner — makes it unmistakable that the data is invented. */}
-      <div className="bg-ink px-4 py-2 text-center text-[11px] leading-tight text-paper/80">
+      <div className="bg-ink px-4 py-2 text-center text-[11px] leading-tight text-paper/90">
         Demo prototype · Communities, builders, pricing and incentives below are
         fictional sample data
       </div>
@@ -25,13 +25,13 @@ export default function SiteHeader() {
             {/* Inline links, desktop only — below sm they live in MobileNav. */}
             <HashLink
               href="/#communities"
-              className="hidden rounded-full px-3 py-2 text-sm text-ink-soft transition-colors hover:text-ink sm:block"
+              className="hidden rounded-sm px-3 py-2 text-sm text-ink-soft transition-colors hover:text-accent sm:block"
             >
               Communities
             </HashLink>
             <HashLink
               href="/#incentives"
-              className="hidden rounded-full px-3 py-2 text-sm text-ink-soft transition-colors hover:text-ink sm:block"
+              className="hidden rounded-sm px-3 py-2 text-sm text-ink-soft transition-colors hover:text-accent sm:block"
             >
               Incentives
             </HashLink>
@@ -39,7 +39,7 @@ export default function SiteHeader() {
             {/* Primary action stays in the bar at every width. */}
             <Link
               href="/quiz"
-              className="rounded-full bg-accent px-3.5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-deep sm:px-4"
+              className="rounded-sm bg-accent px-3.5 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-deep sm:px-4"
             >
               Match me
             </Link>

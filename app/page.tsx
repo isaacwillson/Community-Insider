@@ -33,7 +33,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-5 pb-14 pt-14 sm:px-8 sm:pb-20 sm:pt-24">
           <p className="eyebrow text-accent">New Jersey · New construction</p>
 
-          <h1 className="display mt-6 max-w-4xl text-[2.75rem] leading-[1.03] sm:text-6xl lg:text-7xl">
+          <h1 className="display mt-6 max-w-4xl text-[2rem] leading-[1.14] sm:text-[2.75rem] lg:text-[3.25rem]">
             The sales office works for the builder.
             <br className="hidden sm:block" />{" "}
             <span className="text-accent">I work for you.</span>
@@ -49,7 +49,7 @@ export default function HomePage() {
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="/quiz"
-              className="group inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-4 text-base font-medium text-white transition-colors hover:bg-accent-deep"
+              className="group inline-flex items-center justify-center gap-2 rounded-sm bg-accent px-7 py-4 text-base font-medium text-white transition-colors hover:bg-accent-deep"
             >
               Find my match in 4 questions
               <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
@@ -58,7 +58,7 @@ export default function HomePage() {
             </Link>
             <HashLink
               href="/#communities"
-              className="inline-flex items-center justify-center rounded-full border border-ink/20 px-7 py-4 text-base font-medium text-ink transition-colors hover:border-ink/50"
+              className="inline-flex items-center justify-center rounded-sm border border-line-strong px-7 py-4 text-base font-medium text-ink transition-colors hover:border-ink/45"
             >
               Browse communities
             </HashLink>
@@ -73,8 +73,8 @@ export default function HomePage() {
             ].map((stat) => (
               <div key={stat.label}>
                 <dt className="sr-only">{stat.label}</dt>
-                <dd className="display text-4xl tabular-nums sm:text-5xl">{stat.value}</dd>
-                <p className="mt-2 text-xs leading-snug text-muted sm:text-sm">{stat.label}</p>
+                <dd className="display text-2xl tabular-nums sm:text-[1.75rem]">{stat.value}</dd>
+                <p className="eyebrow mt-2 leading-snug text-muted">{stat.label}</p>
               </div>
             ))}
           </dl>
@@ -84,32 +84,32 @@ export default function HomePage() {
       {/* ---------------------------------------------------------------- */}
       {/* Quiz entry point                                                 */}
       {/* ---------------------------------------------------------------- */}
-      <section className="border-b border-line bg-ink text-paper">
+      <section className="border-b border-line bg-paper-deep">
         <div className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
           <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:gap-16">
             <div>
               <p className="eyebrow text-accent">Builder Match Quiz</p>
-              <h2 className="display mt-4 text-4xl leading-tight sm:text-5xl">
+              <h2 className="display mt-4 text-[1.75rem] sm:text-[2.25rem]">
                 Four questions. Your actual shortlist, not a brochure.
               </h2>
-              <p className="mt-5 max-w-xl text-base leading-relaxed text-paper/70">
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft">
                 County, budget, home type, timeline. You&apos;ll see matched
                 communities the moment you finish — no email gate, no waiting for
                 a callback.
               </p>
               <Link
                 href="/quiz"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-4 text-base font-medium text-white transition-colors hover:bg-accent-deep"
+                className="mt-8 inline-flex items-center gap-2 rounded-sm bg-accent px-7 py-4 text-base font-medium text-white transition-colors hover:bg-accent-deep"
               >
                 Start the quiz
                 <span aria-hidden>→</span>
               </Link>
-              <p className="mt-4 text-xs text-paper/50">
+              <p className="mt-4 text-xs text-muted">
                 Takes about 40 seconds. Results appear before any form.
               </p>
             </div>
 
-            <ol className="space-y-0 border-t border-paper/15">
+            <ol className="space-y-0 border-t border-line-strong">
               {[
                 { n: "01", q: "Where in New Jersey?", a: "Pick as many counties as you like" },
                 { n: "02", q: "What's your budget?", a: "Five ranges, no exact number needed" },
@@ -118,12 +118,12 @@ export default function HomePage() {
               ].map((step) => (
                 <li
                   key={step.n}
-                  className="flex gap-5 border-b border-paper/15 py-5"
+                  className="flex gap-5 border-b border-line-strong py-5"
                 >
                   <span className="font-mono text-xs text-accent">{step.n}</span>
                   <div>
                     <p className="text-base font-medium">{step.q}</p>
-                    <p className="mt-1 text-sm text-paper/55">{step.a}</p>
+                    <p className="mt-1 text-sm text-muted">{step.a}</p>
                   </div>
                 </li>
               ))}
@@ -151,7 +151,9 @@ export default function HomePage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="eyebrow text-accent">On the table right now</p>
-              <h2 className="display mt-3 text-4xl sm:text-5xl">Current builder incentives</h2>
+              <h2 className="display mt-3 text-[1.75rem] sm:text-[2.25rem]">
+                Current builder incentives
+              </h2>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-ink-soft">
               Three of {incentives.length} I&apos;m tracking. These change monthly
@@ -168,13 +170,13 @@ export default function HomePage() {
               return (
                 <article
                   key={incentive.id}
-                  className="flex flex-col border border-line bg-white p-6"
+                  className="flex flex-col border border-line bg-surface p-6"
                 >
-                  <p className="eyebrow text-accent">
+                  <p className="eyebrow border-b border-line pb-3 text-muted">
                     {INCENTIVE_KIND_LABELS[incentive.kind]}
                   </p>
-                  <p className="display mt-4 text-4xl tabular-nums">{incentive.value}</p>
-                  <h3 className="mt-3 text-base font-medium leading-snug">
+                  <p className="rate-figure mt-4 text-[2rem] text-accent">{incentive.value}</p>
+                  <h3 className="mt-4 text-base font-medium leading-snug">
                     {incentive.headline}
                   </h3>
                   <p className="mt-2.5 flex-1 text-sm leading-relaxed text-ink-soft">
@@ -202,7 +204,7 @@ export default function HomePage() {
             })}
           </div>
 
-          <div className="mt-10 flex flex-col items-start gap-4 border border-ink/15 bg-white p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">
+          <div className="mt-10 flex flex-col items-start gap-4 border border-line-strong bg-surface p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">
             <div>
               <p className="text-lg font-medium">
                 Want the full incentive list for this month?
@@ -213,7 +215,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/quiz#lead"
-              className="inline-flex shrink-0 items-center justify-center rounded-full bg-accent px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-accent-deep"
+              className="inline-flex shrink-0 items-center justify-center rounded-sm bg-accent px-6 py-3.5 text-sm font-medium text-white transition-colors hover:bg-accent-deep"
             >
               Request the full list
             </Link>
@@ -228,7 +230,7 @@ export default function HomePage() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="eyebrow text-accent">Video library</p>
-            <h2 className="display mt-3 text-4xl sm:text-5xl">
+            <h2 className="display mt-3 text-[1.75rem] sm:text-[2.25rem]">
               Everything I&apos;d tell you at the kitchen table
             </h2>
           </div>
@@ -240,18 +242,18 @@ export default function HomePage() {
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {videoPlaceholders.map((video) => (
-            <article key={video.id} className="group flex flex-col border border-line bg-white">
+            <article key={video.id} className="group flex flex-col border border-line bg-surface">
               <div className="relative">
                 {/* TODO: swap for real video embed (Mux / YouTube) once produced. */}
                 <ImagePlaceholder width={640} height={360} label="Video thumbnail" />
                 <span className="absolute inset-0 flex items-center justify-center">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-ink shadow-sm">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-surface/95 text-accent">
                     <span aria-hidden className="ml-0.5 text-sm">
                       ▶
                     </span>
                   </span>
                 </span>
-                <span className="absolute bottom-3 right-3 bg-ink/85 px-2 py-1 font-mono text-[10px] text-paper">
+                <span className="absolute bottom-3 right-3 bg-ink/80 px-2 py-1 font-mono text-[10px] text-paper">
                   {video.durationLabel}
                 </span>
               </div>

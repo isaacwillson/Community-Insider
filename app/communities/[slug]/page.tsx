@@ -104,7 +104,7 @@ export default async function CommunityPage({
           />
 
           <div className="mt-8 flex flex-wrap items-center gap-2">
-            <span className="border border-line-strong bg-white px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-ink-soft">
+            <span className="border border-line-strong bg-surface px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-ink-soft">
               {STATUS_LABELS[community.status]}
             </span>
             {communityIncentives.length > 0 && (
@@ -121,7 +121,7 @@ export default async function CommunityPage({
           <p className="mt-6 text-sm uppercase tracking-[0.12em] text-muted">
             {community.builder}
           </p>
-          <h1 className="display mt-3 max-w-3xl text-5xl leading-[1.03] sm:text-6xl lg:text-7xl">
+          <h1 className="display mt-3 max-w-3xl text-[2rem] sm:text-[2.75rem] lg:text-[3.25rem]">
             {community.name}
           </h1>
           <p className="mt-4 text-lg text-ink-soft">
@@ -157,7 +157,7 @@ export default async function CommunityPage({
             {/* Floor plans */}
             <section className="mt-16">
               <h2 className="eyebrow text-accent">Floor plans</h2>
-              <p className="display mt-3 text-3xl">
+              <p className="display mt-3 text-[1.75rem]">
                 {community.floorPlans.length} plans available
               </p>
 
@@ -236,7 +236,7 @@ export default async function CommunityPage({
             {/* Incentives */}
             <section className="mt-16">
               <h2 className="eyebrow text-accent">Current incentives</h2>
-              <p className="display mt-3 text-3xl">
+              <p className="display mt-3 text-[1.75rem]">
                 {communityIncentives.length > 0
                   ? "What this builder is offering"
                   : "Nothing published this month"}
@@ -249,7 +249,7 @@ export default async function CommunityPage({
                     return (
                       <article
                         key={incentive.id}
-                        className="border border-line bg-white p-5 sm:p-6"
+                        className="border border-line bg-surface p-5 sm:p-6"
                       >
                         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
                           <p className="eyebrow text-accent">
@@ -292,19 +292,19 @@ export default async function CommunityPage({
               <h2 className="eyebrow text-accent">The area</h2>
               <div className="mt-6 max-w-2xl space-y-8 border-t border-line pt-7">
                 <div>
-                  <h3 className="display text-2xl">What it&apos;s like to live here</h3>
+                  <h3 className="display text-xl">What it&apos;s like to live here</h3>
                   <p className="mt-3 text-base leading-relaxed text-ink-soft">
                     {community.areaOverview}
                   </p>
                 </div>
                 <div>
-                  <h3 className="display text-2xl">Schools</h3>
+                  <h3 className="display text-xl">Schools</h3>
                   <p className="mt-3 text-base leading-relaxed text-ink-soft">
                     {community.schoolsNote}
                   </p>
                 </div>
                 <div>
-                  <h3 className="display text-2xl">Getting around</h3>
+                  <h3 className="display text-xl">Getting around</h3>
                   <p className="mt-3 text-base leading-relaxed text-ink-soft">
                     {community.commuteNote}
                   </p>
@@ -320,9 +320,9 @@ export default async function CommunityPage({
           {/* -------------------------------------------------------- */}
           <aside className="hidden lg:block">
             <div className="sticky top-28">
-              <div className="border border-ink/15 bg-white p-6">
+              <div className="border border-line-strong bg-surface p-6">
                 <p className="eyebrow text-accent">Ask about this community</p>
-                <p className="display mt-4 text-2xl leading-tight">
+                <p className="display mt-4 text-xl">
                   What would you want to know before you walked in?
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-ink-soft">
@@ -332,13 +332,13 @@ export default async function CommunityPage({
                 </p>
                 <Link
                   href="/quiz#lead"
-                  className="mt-6 flex items-center justify-center rounded-full bg-accent px-5 py-3.5 text-sm font-medium text-white transition-colors hover:bg-accent-deep"
+                  className="mt-6 flex items-center justify-center rounded-sm bg-accent px-5 py-3.5 text-sm font-medium text-white transition-colors hover:bg-accent-deep"
                 >
                   Ask about {community.name.split(" ")[0]}
                 </Link>
                 <Link
                   href="/quiz"
-                  className="mt-3 flex items-center justify-center rounded-full border border-ink/20 px-5 py-3.5 text-sm font-medium text-ink transition-colors hover:border-ink/50"
+                  className="mt-3 flex items-center justify-center rounded-sm border border-line-strong px-5 py-3.5 text-sm font-medium text-ink transition-colors hover:border-ink/45"
                 >
                   See my other matches
                 </Link>
@@ -366,7 +366,7 @@ export default async function CommunityPage({
           </div>
           <Link
             href="/quiz#lead"
-            className="shrink-0 rounded-full bg-accent px-5 py-3 text-sm font-medium text-white"
+            className="shrink-0 rounded-sm bg-accent px-5 py-3 text-sm font-medium text-white"
           >
             Ask about this
           </Link>

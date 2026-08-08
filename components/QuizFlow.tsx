@@ -106,7 +106,7 @@ export default function QuizFlow() {
     return (
       <div className="mx-auto max-w-3xl px-5 py-12 sm:px-8 sm:py-20">
         <p className="eyebrow text-accent">Ask directly</p>
-        <h1 className="display mt-4 text-4xl leading-tight sm:text-5xl">
+        <h1 className="display mt-4 text-[1.9rem] sm:text-[2.5rem]">
           Tell me what you need and I&apos;ll send it over.
         </h1>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft">
@@ -141,7 +141,7 @@ export default function QuizFlow() {
     return (
       <div className="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-16">
         <p className="eyebrow text-accent">Your matches</p>
-        <h1 className="display mt-4 text-4xl leading-[1.05] sm:text-6xl">
+        <h1 className="display mt-4 text-[1.9rem] sm:text-[2.75rem]">
           {strong.length > 0
             ? `${strong.length} ${strong.length === 1 ? "community fits" : "communities fit"} what you described.`
             : "Nothing lines up perfectly — but these are close."}
@@ -159,7 +159,7 @@ export default function QuizFlow() {
             .map((chip) => (
               <span
                 key={chip as string}
-                className="border border-line-strong bg-white px-3 py-1.5 text-xs text-ink-soft"
+                className="border border-line-strong bg-surface px-3 py-1.5 text-xs text-ink-soft"
               >
                 {chip}
               </span>
@@ -277,7 +277,7 @@ export default function QuizFlow() {
                   className={`flex items-center justify-between gap-3 border px-5 py-4 text-left transition-colors ${
                     selected
                       ? "border-accent bg-accent-wash"
-                      : "border-line-strong bg-white hover:border-ink/40"
+                      : "border-line-strong bg-surface hover:border-ink/40"
                   }`}
                 >
                   <span className="text-base font-medium">{county} County</span>
@@ -299,7 +299,7 @@ export default function QuizFlow() {
                 setStep(1);
                 scrollToTop();
               }}
-              className="rounded-full bg-accent px-8 py-4 text-base font-medium text-white transition-colors hover:bg-accent-deep disabled:cursor-not-allowed disabled:bg-line-strong disabled:text-muted"
+              className="rounded-sm bg-accent px-8 py-4 text-base font-medium text-white transition-colors hover:bg-accent-deep disabled:cursor-not-allowed disabled:bg-line-strong disabled:text-muted"
             >
               Continue
             </button>
@@ -392,7 +392,7 @@ function QuestionShell({
 }) {
   return (
     <div className="mt-10 sm:mt-14">
-      <h1 className="display text-4xl leading-[1.05] sm:text-5xl">{title}</h1>
+      <h1 className="display text-[1.9rem] sm:text-[2.5rem]">{title}</h1>
       <p className="mt-4 max-w-xl text-base leading-relaxed text-ink-soft">{subtitle}</p>
       <div className="mt-8 sm:mt-10">{children}</div>
     </div>
@@ -416,7 +416,7 @@ function OptionRow({
       aria-pressed={selected}
       onClick={onClick}
       className={`group flex w-full items-center justify-between gap-4 border px-5 py-4 text-left transition-colors ${
-        selected ? "border-accent bg-accent-wash" : "border-line-strong bg-white hover:border-ink/40"
+        selected ? "border-accent bg-accent-wash" : "border-line-strong bg-surface hover:border-ink/40"
       }`}
     >
       <span className="min-w-0">
@@ -447,7 +447,7 @@ function MatchRow({
 
   return (
     <article
-      className={`border bg-white p-5 sm:p-6 ${muted ? "border-line" : "border-ink/15"}`}
+      className={`border bg-surface p-5 sm:p-6 ${muted ? "border-line" : "border-line-strong"}`}
     >
       <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
         <div className="min-w-0">
@@ -455,7 +455,7 @@ function MatchRow({
             {rank ? `Match ${rank} · ` : ""}
             {community.builder}
           </p>
-          <h3 className="display mt-1.5 text-2xl leading-tight sm:text-3xl">
+          <h3 className="display mt-1.5 text-xl sm:text-2xl">
             {community.name}
           </h3>
           <p className="mt-1 text-sm text-ink-soft">
@@ -463,7 +463,7 @@ function MatchRow({
           </p>
         </div>
         <div className="text-right">
-          <p className={`display text-3xl tabular-nums ${muted ? "text-muted" : "text-accent"}`}>
+          <p className={`rate-figure text-2xl ${muted ? "text-muted" : "text-accent"}`}>
             {percent}%
           </p>
           <p className="text-[11px] uppercase tracking-wider text-muted">match</p>

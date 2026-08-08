@@ -1,25 +1,33 @@
 @import "tailwindcss";
 
 /*
-  Design system — editorial, not brochure.
-  One accent (vermilion), warm paper background, near-black ink, a single
-  hairline rule color. Everything else is type and space.
+  Design system — a local advisor's publication, not a product page.
+
+  Warm paper ground, warm near-black ink (olive/brown cast, never neutral gray),
+  and ONE accent: deep forest green. The accent is rationed to CTAs, active
+  states and small labels. Surfaces separate by a hairline and a slight warm
+  shift in value — no heavy shadows, no dark fills, no gradients.
 */
 @theme {
-  --color-paper: #faf9f6;
-  --color-paper-deep: #f2efe8;
-  --color-ink: #16150f;
-  --color-ink-soft: #46443c;
-  --color-muted: #75726a;
-  --color-line: #e2ded4;
-  --color-line-strong: #cdc8bb;
-  --color-accent: #d9430f;
-  --color-accent-deep: #b03509;
-  --color-accent-wash: #fbeee8;
-  --color-placeholder: #d9d5cc;
-  --color-placeholder-ink: #85817a;
+  --color-paper: #faf8f5;
+  --color-paper-deep: #f2ece2;
+  --color-surface: #fffdfa;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --color-ink: #1c1b15;
+  --color-ink-soft: #4a473d;
+  --color-muted: #6b6759;
+
+  --color-line: #e5dfd3;
+  --color-line-strong: #d2cab8;
+
+  --color-accent: #2e4b3c;
+  --color-accent-deep: #21382c;
+  --color-accent-wash: #eaefe7;
+
+  --color-placeholder: #e3dccf;
+  --color-placeholder-ink: #6b6455;
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: var(--font-display-serif), ui-serif, Georgia, "Times New Roman", serif;
   --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, monospace;
 }
@@ -39,31 +47,43 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Editorial headline treatment: serif display, tight leading, no letter-spacing
-   theatrics. Applied via .display so it's opt-in per heading. */
+/* Editorial headline treatment. Tracking sits at the font's natural metrics —
+   the negative letter-spacing this used to carry is the single strongest
+   "designed by a landing-page generator" tell. Leading is open enough to read
+   as a magazine deck rather than a hero slab. */
 .display {
   font-family: var(--font-display);
   font-weight: 400;
-  line-height: 1.02;
-  letter-spacing: -0.015em;
+  line-height: 1.16;
+  letter-spacing: 0;
 }
 
-/* Small all-caps label used for section eyebrows and field labels. */
+/* Small caps label for section eyebrows and field labels. */
 .eyebrow {
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
 }
 
+/* Printed rate-sheet figure — the incentive values. Serif, tabular, sitting on
+   a rule like a printed table cell rather than floating like a pricing tier. */
+.rate-figure {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
 /* Diagonal hatch for image placeholders — reads as "asset pending",
-   not as a broken image. */
+   not as a broken image. Warm neutral, never cool gray. */
 .placeholder-hatch {
   background-color: var(--color-placeholder);
   background-image: repeating-linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.55) 0px,
-    rgba(255, 255, 255, 0.55) 1px,
+    rgba(255, 253, 248, 0.5) 0px,
+    rgba(255, 253, 248, 0.5) 1px,
     transparent 1px,
     transparent 11px
   );
@@ -94,7 +114,7 @@ body {
 /* Native selects: strip the platform chrome, keep the affordance. */
 select {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%2346443c' stroke-width='1.5'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none' stroke='%234a473d' stroke-width='1.5'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.85rem center;
   background-size: 0.7rem;
