@@ -3,7 +3,7 @@ import HashLink from "./HashLink";
 
 export default function SiteFooter() {
   return (
-    <footer className="mt-24 border-t border-line bg-paper-deep">
+    <footer id="contact" className="mt-24 scroll-mt-16 border-t border-line bg-paper-deep">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="max-w-2xl">
           <p className="eyebrow text-accent">Next step</p>

@@ -22,15 +22,20 @@ export default function HashLink({
   href,
   className,
   children,
+  onNavigate,
 }: {
   href: string;
   className?: string;
   children: ReactNode;
+  /** Fires on any accepted click — used by the mobile menu to close itself. */
+  onNavigate?: () => void;
 }) {
   const pathname = usePathname();
 
   const [rawPath, hash] = href.split("#");
-  const targetPath = rawPath === "" ? "/" : rawPath;
+  // A bare "#foo" targets whatever page you're on (the footer lives on all of
+  // them); "/#foo" specifically means that section of the homepage.
+  const targetPath = rawPath === "" ? pathname : rawPath;
 
   function handleClick(event: MouseEvent<HTMLAnchorElement>) {
     // Let the browser own modified clicks (new tab, download, etc.).
@@ -41,6 +46,11 @@ export default function HashLink({
     if (!target) return;
 
     event.preventDefault();
+
+    // Only after we've committed to handling this ourselves. Firing it on a
+    // click that falls through to Next would let the caller unmount this link
+    // mid-navigation, which cancels the navigation.
+    onNavigate?.();
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     target.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
