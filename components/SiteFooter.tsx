@@ -36,7 +36,7 @@ export default function SiteFooter() {
           <div>
             <p className="eyebrow text-muted">Contact</p>
             <p className="mt-3 text-sm text-ink-soft">
-              Dana Whitfield
+              Placeholder Smith
               <br />
               Placeholder Realty Group
               <br />
